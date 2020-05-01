@@ -1,7 +1,17 @@
+:root {
+  --primary: rgb(240, 114, 114);
+  --darker: rgb(168, 55, 55);
+  --lighter: rgb(214, 133, 133);
+}
+
 .App h1 {
   text-align: center;
 }
 
 .editor-container {
-  background: #000;
+  background: var(--primary);
+}
+
+.editor-title {
+  background: var(--darker);
 }
