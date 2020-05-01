@@ -10,8 +10,22 @@
 
 .editor-container {
   background: var(--primary);
+  height: 25vh;
 }
 
 .editor-title {
   background: var(--darker);
+  padding: 0.5rem;
+}
+
+.editor-title p {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+#editor {
+  box-sizing: border-box;
+  width: 100%;
+  height: calc(100% - 2.5rem);
+  resize: none;
 }
