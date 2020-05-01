@@ -1,26 +1,29 @@
 import React, { useState } from 'react';
 import './App.css';
 
-function Editor(currentState: any, updateState: any) {
+function Editor(state: any) {
   return (
     <div className="editor-container">
       <div className="editor-title">
         <p>Editor</p>
       </div>
-      <textarea id="editor" cols={30} rows={10}></textarea>
+      <textarea
+        id="editor"
+        onChange={(event) => {
+          state.updateState(event.target.value);
+        }}
+      ></textarea>
     </div>
   );
 }
 
 function MarkdownPreviewer(currentState: any) {
-  console.log(window, currentState);
-
   let renderedMardown = (window as any).marked(currentState.currentState);
 
   return (
     <div className="preview-container">
       <div className="preview-title">
-        <h1>Preview</h1>
+        <p>Preview</p>
       </div>
 
       <div
@@ -38,7 +41,8 @@ function App() {
 
   return (
     <div className="App">
-      <Editor currentState={unparsedMarkdown} updateMarkdown={updateMarkdown} />
+      <h1>Welcome Live Markdown!</h1>
+      <Editor currentState={unparsedMarkdown} updateState={updateMarkdown} />
       <MarkdownPreviewer currentState={unparsedMarkdown} />
     </div>
   );
