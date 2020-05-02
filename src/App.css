@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
 :root {
-  --primary: rgb(240, 114, 114);
+  --primary: rgb(235, 94, 94);
   --darker: rgb(168, 55, 55);
   --lighter: rgb(214, 133, 133);
+}
+
+body {
+  background: var(--lighter);
+  font-family: 'Varela Round', sans-serif;
 }
 
 .App h1 {
@@ -11,14 +18,18 @@
 .editor-container {
   background: var(--primary);
   height: 25vh;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
-.editor-title {
+.title {
   background: var(--darker);
   padding: 0.5rem;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
-.editor-title p {
+.title p {
   font-size: 1.5rem;
   margin: 0;
 }
@@ -28,4 +39,25 @@
   width: 100%;
   height: calc(100% - 2.5rem);
   resize: none;
+}
+
+.preview-container {
+  margin-top: 1.5rem;
+  background: var(--primary);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.preview-container p {
+  font-size: 1.15rem;
+}
+
+#preview {
+  padding: 0.5rem;
+}
+
+code {
+  background: rgba(189, 172, 172, 0.65);
+
+  border-radius: 10px;
 }
